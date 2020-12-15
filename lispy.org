@@ -2,7 +2,7 @@
 
 * Simpliest lisp code I can think of:
 
-#+begin_src elisp
+#+begin_src elisp :exports both
 ()
 #+end_src
 
@@ -10,9 +10,8 @@
 
 *  Bit more complicated
 
-#+begin_src emacs-lisp
+#+begin_src emacs-lisp :exports both
 (+ 1 2)
-
 #+end_src
 
 #+RESULTS:
