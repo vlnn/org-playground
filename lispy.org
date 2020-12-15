@@ -1,0 +1,9 @@
+#+TITLE: Lispy
+
+* Simpliest lisp code I can think of:
+
+#+begin_src elisp
+()
+#+end_src
+
+#+RESULTS:
