@@ -27,9 +27,59 @@
 #+RESULTS:
 : a
 
-#+begin_src scheme
+#+begin_src scheme :exports both
 (and #t #f)
 #+end_src
 
 #+RESULTS:
 : #f
+
+*  The Little Schemer
+** 0. Getting ready
+#+name: common
+#+begin_src scheme
+(define atom?
+  (lambda (x)
+    (and (not (pair? x)) (not (null? x)))))
+(atom? "something")
+#+end_src
+
+#+RESULTS: common
+: #t
+
+#+begin_src scheme :noweb yes
+<<common>>
+(atom? "atom")
+#+end_src
+
+#+RESULTS:
+: #t
+
+
+** 2. test
+
+    #+name: src-block
+    #+begin_src scheme
+    (define (new-if predicate then-clause else-clause)
+      (cond (predicate then-clause)
+            (else else-clause)))
+    #+end_src
+
+    #+RESULTS: src-block
+    : #<unspecified>
+
+Eva demonstrates the program for Alyssa:
+
+    #+begin_src scheme :noweb yes :results list
+      <<src-block>>
+
+    (list
+      (new-if (= 2 3) 0 5)
+
+      (new-if (= 1 1) 0 5)
+    )
+    #+end_src
+
+    #+RESULTS:
+    - 5
+    - 0
