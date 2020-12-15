@@ -7,3 +7,13 @@
 #+end_src
 
 #+RESULTS:
+
+*  Bit more complicated
+
+#+begin_src emacs-lisp
+(+ 1 2)
+
+#+end_src
+
+#+RESULTS:
+: 3
