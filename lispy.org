@@ -1,6 +1,7 @@
 #+TITLE: Lispy
 
-* Simpliest lisp code I can think of:
+* Lisp code in org-mode
+** Simpliest lisp code I can think of:
 
 #+begin_src elisp :exports both
 ()
@@ -8,7 +9,7 @@
 
 #+RESULTS:
 
-*  Bit more complicated
+**  Bit more complicated
 
 #+begin_src emacs-lisp :exports both
 (+ 1 2)
@@ -16,3 +17,19 @@
 
 #+RESULTS:
 : 3
+
+*  Some scheme code evaluated
+
+#+begin_src scheme :exports both
+(car '("a" "b" "c"))
+#+end_src
+
+#+RESULTS:
+: a
+
+#+begin_src scheme
+(and #t #f)
+#+end_src
+
+#+RESULTS:
+: #f
