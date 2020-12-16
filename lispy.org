@@ -27,6 +27,7 @@
 #+RESULTS:
 : a
 
+
 #+begin_src scheme :exports both
 (and #t #f)
 #+end_src
@@ -34,10 +35,11 @@
 #+RESULTS:
 : #f
 
+
 *  The Little Schemer
 ** 0. Getting ready
 #+name: common
-#+begin_src scheme
+#+begin_src scheme :session little-schemer
 (define atom?
   (lambda (x)
     (and (not (pair? x)) (not (null? x)))))
@@ -46,22 +48,49 @@
 #+RESULTS: common
 : #<unspecified>
 
+
 ** 1. Toys
 *** Let's first see the primitive things working. Is "atom" really an atom?
 
-#+begin_src scheme :noweb yes :exports both
-<<common>>
-(atom? "atom")
+#+begin_src scheme :noweb yes :session little-schemer :exports both
+ (atom? "atom")
 #+end_src
 
 #+RESULTS:
 : #t
+
 *** And is '("atom") really not an atom?
 
-#+begin_src scheme :noweb yes :exports both
-<<common>>
+#+begin_src scheme :noweb yes :session little-schemer :exports both
 (atom? '("atom"))
 #+end_src
 
 #+RESULTS:
 : #f
+
+*** I wonder if '(atom) is a list?
+
+#+begin_src scheme :noweb yes :session little-schemer :exports both
+(list? '(atom))
+#+end_src
+
+#+RESULTS:
+: #t
+
+*** I wonder if "(atom is) out there" is a list?
+
+#+begin_src scheme :noweb yes :session little-schemer :exports both
+(list? '(atom is) out there)
+#+end_src
+
+#+RESULTS:
+...no answer...
+
+*** What is *car* of (a b c)?
+
+#+begin_src scheme :noweb yes :session little-schemer :exports both
+(car '(a b c))
+#+end_src
+
+#+RESULTS:
+: a
