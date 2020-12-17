@@ -121,7 +121,9 @@
 #+RESULTS:
 ...no answer...
 
+#+BEGIN_QUOTE
 THE LAW OF CAR: the primitive *car* is defined only for non-empty lists.
+#+END_QUOTE
 
 *** What is *car* of an '(((hotdogs)) (and) (pickle) relish)?
 #+begin_src scheme :noweb yes :session little-schemer :exports both
@@ -150,7 +152,9 @@ THE LAW OF CAR: the primitive *car* is defined only for non-empty lists.
 #+RESULTS:
 ...no answer...
 
+#+BEGIN_QUOTE
 THE LAW OF CDR: the primitive *cdr* is defined only for non-empty lists and always returns another list.
+#+END_QUOTE
 
 *** What is *(car (cdr '((b) (x y) ((c)))*?
 
@@ -160,3 +164,13 @@ THE LAW OF CDR: the primitive *cdr* is defined only for non-empty lists and alwa
 
 #+RESULTS:
 | x | y |
+
+*** How github renders '((b) ((x y) ((c))))?
+
+#+begin_src scheme :noweb yes :session little-schemer :exports both
+'(('b) (('x 'y) (('c))))
+#+end_src
+
+#+RESULTS:
+| 'b      |        |
+| ('x 'y) | (('c)) |
