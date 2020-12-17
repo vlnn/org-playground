@@ -77,6 +77,15 @@
 #+RESULTS:
 : #t
 
+*** I wonder if "(()()())" is a list?
+
+#+begin_src scheme :noweb yes :session little-schemer :exports both
+(list? '(()()()))
+#+end_src
+
+#+RESULTS:
+: #t
+
 *** I wonder if "(atom is) out there" is a list?
 
 #+begin_src scheme :noweb yes :session little-schemer :exports both
@@ -94,3 +103,51 @@
 
 #+RESULTS:
 : a
+
+*** What is *car* of ()?
+
+#+begin_src scheme :noweb yes :session little-schemer :exports both
+(car '())
+#+end_src
+
+#+RESULTS:
+...no answer...
+
+*** What is *car* of an atom?
+#+begin_src scheme :noweb yes :session little-schemer :exports both
+(car 'atom)
+#+end_src
+
+#+RESULTS:
+...no answer...
+
+THE LAW OF CAR: the primitive *car* is defined only for non-empty lists.
+
+*** What is *car* of an '(((hotdogs)) (and) (pickle) relish)?
+#+begin_src scheme :noweb yes :session little-schemer :exports both
+(car '(((hotdogs)) (and) (pickle) relish))
+#+end_src
+
+#+RESULTS:
+| hotdogs |
+
+
+*** What is *cdr* of ()?
+
+#+begin_src scheme :noweb yes :session little-schemer :exports both
+(cdr '())
+#+end_src
+
+#+RESULTS:
+...no answer...
+
+*** What is *cdr* of the atom?
+
+#+begin_src scheme :noweb yes :session little-schemer :exports both
+(cdr 'atom)
+#+end_src
+
+#+RESULTS:
+...no answer...
+
+THE LAW OF CDR: the primitive *cdr* is defined only for non-empty lists and always returns a list.a
