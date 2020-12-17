@@ -150,4 +150,13 @@ THE LAW OF CAR: the primitive *car* is defined only for non-empty lists.
 #+RESULTS:
 ...no answer...
 
-THE LAW OF CDR: the primitive *cdr* is defined only for non-empty lists and always returns a list.a
+THE LAW OF CDR: the primitive *cdr* is defined only for non-empty lists and always returns another list.
+
+*** What is *(car (cdr '((b) (x y) ((c)))*?
+
+#+begin_src scheme :noweb yes :session little-schemer :exports both
+(car (cdr '((b) (x y) ((c)))))
+#+end_src
+
+#+RESULTS:
+| x | y |
