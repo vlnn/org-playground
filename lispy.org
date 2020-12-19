@@ -168,9 +168,11 @@ THE LAW OF CDR: the primitive *cdr* is defined only for non-empty lists and alwa
 *** How github renders complex structures?
 
  #+begin_src scheme :noweb yes :session little-schemer :exports both
-'((b) ((x y) ((c) (d e)) (f) (g)
+'((b) (x y) ((c) (d e)) (f g))
 #+end_src
 
 #+RESULTS:
-| b     |             |     |   |
-| (x y) | ((c) (d e)) | (f) | g |
+| b   |       |
+| x   | y     |
+| (c) | (d e) |
+| f   | g     |
